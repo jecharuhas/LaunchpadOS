@@ -1,0 +1,31 @@
+{
+  "name": "launchpados",
+  "version": "1.0.0",
+  "description": "A customizable desktop companion that turns a Novation Launchpad into a programmable control surface with apps, macros, dashboards, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jecharuhas/LaunchpadOS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jecharuhas/LaunchpadOS/issues"
+  },
+  "homepage": "https://github.com/jecharuhas/LaunchpadOS#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "easymidi": "^3.2.0"
+  },
+  "allowScripts": {
+    "@julusian/midi@3.6.1": true
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
