@@ -4,6 +4,9 @@
   "description": "A customizable desktop companion that turns a Novation Launchpad into a programmable control surface with apps, macros, dashboards, etc.",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "list": "node src/index.js --list",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,7 +14,7 @@
     "url": "git+https://github.com/jecharuhas/LaunchpadOS.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "jecharuhas",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
