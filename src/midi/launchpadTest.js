@@ -1,6 +1,11 @@
 const { Launchpad } = require("./launchpad");
+const { ActionRegistry } = require("../actions/registry");
+const { setupHomeMode } = require("../modes/home");
 
 const launchpad = new Launchpad("Launchpad MK2", "Launchpad MK2");
+const registry = new ActionRegistry();
+
+setupHomeMode(launchpad, registry);
 
 console.log("\nLaunchpad test is running.");
 console.log("Press pads on the Launchpad.");
@@ -32,7 +37,9 @@ launchpad.onPadRelease((message) =>
     console.log(`Pad released: ${message.note}`);
     launchpad.clearPad(message.note);
 });
-*/
+
+
+*/ /*
 
 launchpad.onPadPress((message) => 
 {
@@ -57,6 +64,32 @@ launchpad.onControlRelease((message) =>
     console.log(`Control released: ${message.controller}`);
     launchpad.clearControl(message.controller);
 });
+
+
+/*
+registry.registerNote(81, {
+    id: "test.note81",
+    label: "Test Note 81",
+    run: async (message) => {
+        console.log("Action fired for note:", message.note);
+        launchpad.flashPad(message.note);
+    }
+});
+
+launchpad.onPadPress((message) => 
+{
+    registry.triggerNote(message.note, message);
+});
+*/
+
+
+launchpad.onPadPress(async (message) => 
+{
+    await registry.triggerNote(message.note, message);
+    //launchpad.flashPad(message.note);
+});
+
+
 
 process.on("SIGINT", () => 
 {

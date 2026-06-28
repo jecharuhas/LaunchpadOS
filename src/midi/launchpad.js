@@ -46,7 +46,7 @@ class Launchpad
             }
 
             //for testing
-            console.log("NOTE ON:", message);
+            //console.log("NOTE ON:", message);
 
             this.padPressHandlers.forEach((handler) =>
             {
@@ -129,7 +129,7 @@ class Launchpad
             this.clearPad(note);
         }, durationMs);
     }
-    
+
     lightControl(controller, color = defaultPressColor)
     {
         this.output.send("cc", 
