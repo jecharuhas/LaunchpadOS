@@ -29,13 +29,19 @@ function listDevices()
     });
 
     console.log("Chosen Input:", inputName || "No Launchpad Input Found");
-    console.log("Chosen Output:", outputName || "No Launchpad Output Found");
+    console.log("Chosen Output:", outputName + "\n" || "No Launchpad Output Found \n");
 
     return 
     {
         inputName,
         outputName
     };
+}
+
+//to test
+if (require.main === module) 
+{
+    listDevices();
 }
 
 module.exports = 
