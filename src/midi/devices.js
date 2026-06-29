@@ -1,6 +1,6 @@
 const easymidi = require("easymidi");
 
-// gets the chosen input and output device names for the Launchpad, if they exist
+// Gets the chosen input and output device names for the Launchpad, if they exist
 function listDevices() 
 {
     const inputs = easymidi.getInputs();
@@ -29,16 +29,16 @@ function listDevices()
     });
 
     console.log("Chosen Input:", inputName || "No Launchpad Input Found");
-    console.log("Chosen Output:", outputName + "\n" || "No Launchpad Output Found \n");
+    console.log("Chosen Output:", outputName || "No Launchpad Output Found");
+    console.log("");
 
-    return 
-    {
+    return {
         inputName,
         outputName
     };
 }
 
-//to test
+// to test
 if (require.main === module) 
 {
     listDevices();

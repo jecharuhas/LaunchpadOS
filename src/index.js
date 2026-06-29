@@ -41,7 +41,6 @@ launchpad.onPadPress(async (message) =>
 
 process.on("SIGINT", () => 
 {
-    console.log("\nClosing LaunchpadOS...");
     launchpad.close();
     process.exit(0);
 });
