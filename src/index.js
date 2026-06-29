@@ -38,6 +38,11 @@ launchpad.onPadPress(async (message) =>
 {
     await registry.triggerNote(message.note, message);
 });
+launchpad.onControlPress(async (message) => 
+{
+    await registry.triggerControl(message.controller, message);
+});
+
 
 process.on("SIGINT", () => 
 {
